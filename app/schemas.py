@@ -15,10 +15,6 @@ class CreatePost(PostBase):
 # class UpdatePost(PostBase):
 #     pass 
 
-class PostOut(PostBase):
-    Post: Post
-    votes: int
-
 class UserReturn(BaseModel):
     email: EmailStr
     created_at: datetime
@@ -38,6 +34,9 @@ class Post(PostBase):
     class Config:
         orm_mode = True
 
+class PostOut(PostBase):
+    Post: Post
+    votes: int
 
 class UserCreate(BaseModel):
     email: EmailStr
