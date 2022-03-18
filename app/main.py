@@ -30,4 +30,4 @@ app.include_router(vote.router)
 # path operation
 @app.get("/")
 def root(db: Session = Depends(get_db)):
-    return {"message": "Hello World!!"} # fastapi automatically converts it to json before sending to user
+    return {"message": "Hello World!!????"} # fastapi automatically converts it to json before sending to user
