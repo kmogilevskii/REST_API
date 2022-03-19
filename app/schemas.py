@@ -16,6 +16,7 @@ class CreatePost(PostBase):
 #     pass 
 
 class UserReturn(BaseModel):
+    id: int
     email: EmailStr
     created_at: datetime
 
