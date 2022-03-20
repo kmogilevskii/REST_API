@@ -64,6 +64,7 @@ def authorized_client(client, token):
 
     return client
 
+
 @pytest.fixture()
 def create_posts(create_user, session):
     post_data = [
@@ -98,3 +99,11 @@ def create_posts(create_user, session):
     session.commit()
     posts = session.query(models.Post).all()
     return posts
+
+
+@pytest.fixture()
+def create_vote(create_posts, create_user, session):
+    new_vote = models.Vote(post_id=create_posts[0].id, user_id=create_user["id"])
+    session.add(new_vote)
+    session.commit()
+
